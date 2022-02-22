@@ -87,7 +87,7 @@ export const clip = new HTMLClip({
   ],
   audioSources: [
     {
-      src: "https://github.com/ivanvl01/wave/blob/main/demo/sound.mp3",
+      src: "https://donkey-spaces.ams3.cdn.digitaloceanspaces.com/assets/wave-clip/sound.mp3",
       id: "my-mp3",
       classes: ["songs", "rock"],
       base64: false,
