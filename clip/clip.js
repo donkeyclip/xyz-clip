@@ -1,6 +1,4 @@
-import {HTMLClip,CSSEffect,loadPlugin,Group} from "@donkeyclip/motorcortex";
-import MCVideo from "@kissmybutton/motorcortex-youtube";
-const VideoPlugin = loadPlugin(MCVideo);
+import {HTMLClip,CSSEffect,loadPlugin,Group,AudioPlayback} from "@donkeyclip/motorcortex";
 function createBixList (){
   let boxlist = ""
   for (var y = 0; y < 400; y++) {
@@ -87,39 +85,21 @@ export const clip = new HTMLClip({
       src: `https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700&display=swap`,
     },
   ],
+  audioSources: [
+    {
+      src: "https://github.com/ivanvl01/wave/blob/main/demo/sound.mp3",
+      id: "my-mp3",
+      classes: ["songs", "rock"],
+      base64: false,
+    },
+  ],
 });
-// const VideoClip = new VideoPlugin.Clip(
-//   {
-//     startFrom: 42000,
-//     width: 0,
-//     height: 0,
-//     videoId: "5TbXrSrllG8",
-//     volume: 1,
-//   },
-//   {
-//     selector: "#video-container",
-//     id: "videoClip",
-//   }
-// );
-const VideoClip = new VideoPlugin.Clip(
-  {
-    startFrom: 28000,
-    width: 0,
-    height: 0,
-    videoId: "4MEnYV2ISwI",
-    volume: 1,
-  },
-  {
-    selector: "#video-container",
-    id: "videoClip",
-  }
-);
 
-const Playback = new VideoPlugin.Playback({
-  selector: "!#video",
-  duration: 21000, });
-
-VideoClip.addIncident(Playback, 0);
+const songPlayback = new AudioPlayback({
+  selector: "~#my-mp3",
+  startFrom: 0,
+  duration: 21000,
+});
 
 
 const randomIn = new CSSEffect(
@@ -392,9 +372,9 @@ const Zrandom = new CSSEffect(
   
   
 
-clip.addIncident(VideoClip,0)
-const clipMotion = new Group()
 
+const clipMotion = new Group()
+clip.addIncident(songPlayback,0)
 clipMotion.addIncident(randomIn, 0);
 clipMotion.addIncident(Flip, 9300);
 clipMotion.addIncident(Flip2,9800);
@@ -448,49 +428,3 @@ clipMotion.addIncident(riple(20,20,10,10,0,350,{
 },".box"),19800)
 
 clip.addIncident(clipMotion,0)
-
-// console.log(clipMotion)
-
-
-window.clip = clip
-
-
-
-
-// clip.addIncident(riple(20,20,10,10,0,350,{
-//   width:"100%",
-//   height:"100%"
-// },".box::before"),18000)
-
-///riple
-
-// const rows = 20;
-// const columns= 20;
-// const startRow = 5;
-// const startCol= 5;
-
-// //help variables
-// const maxY= (startCol + 1)*2 <= columns ? columns-1 - startCol:startCol;
-// const maxX= (startRow + 1)*2 <= rows ? rows-1 - startRow:startRow;
-// const maxDistance = Math.pow(maxX,2) + Math.pow(maxY,2);
-// const minDelay = 0;
-// const maxDelay = 4000;
-// console.log(maxX,maxY,maxDistance)
-
-// const MyIncident = new CSSEffect(
-//   {
-//     animatedAttrs: {
-//       // transform: {
-//       //   translateZ:"40px",
-//       // },
-//       opacity:0
-//     },
-//   },
-//   {
-//     selector: ".box",
-//     duration: 2000,
-//     easing: "linear",
-//     delay:`@expression(${minDelay}+(pow(floor(index/${columns})-${startRow},2)+pow(index % ${columns}-${startCol},2))*${maxDelay-minDelay}/${maxDistance})`
-//   }
-// );
-// clip.addIncident(MyIncident, 0);
