@@ -15,8 +15,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/i,
+        use: ["to-string-loader", "style-loader", "css-loader"],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       {
         test: /\.js$/,
@@ -35,7 +39,7 @@ module.exports = {
   ],
 
   devServer: {
-    host: "127.0.0.1",
+    host: "0.0.0.0",
     port: 8090,
     historyApiFallback: false,
     hot: true,

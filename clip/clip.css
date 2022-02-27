@@ -1,0 +1,59 @@
+* {
+  --box-width: calc({{initParams.width}} - 2px);
+  --box-height: calc({{initParams.height}} - 2px);
+  box-sizing: border-box;
+}
+.root {
+  margin: 0;
+  background: blue;
+  overflow: hidden;
+  margin: 0;
+  background: #121212;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+}
+#video-container {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+#perspective {
+  width: 50vmin;
+  height: 50vmin;
+  perspective: 60vmin;
+}
+
+.container {
+  width: 50vmin;
+  height: 50vmin;
+  line-height: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(70deg);
+}
+
+.box {
+  display: inline-block;
+  background: #fff;
+  width: var(--box-width);
+  height: var(--box-height);
+  opacity: 0;
+  margin: 1px;
+}
+
+.box::before,
+.box::after {
+  content: "";
+  background: #fff;
+  width: 0%;
+  height: 0%;
+  position: absolute;
+}
+.box::before {
+  background: #000;
+}
