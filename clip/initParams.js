@@ -1,14 +1,11 @@
+const count = 6;
 export default [
   {
     name: "Default",
     value: {
-      color: "white",
-    },
-  },
-  {
-    name: "Red Color",
-    value: {
-      color: "red",
+      width: 100 / count + "%",
+      height: 100 / count + "%",
+      totalBoxes: Array(count * count).fill(""),
     },
   },
 ];
