@@ -1,7 +1,8 @@
-import { HTMLClip } from "@donkeyclip/motorcortex";
+import { HTMLClip, Group } from "@donkeyclip/motorcortex";
 import html from "./clip.html";
 import css from "!!raw-loader!./clip.css";
 import initParams from "./initParams";
+
 import {
   songPlayback,
   randomIn,
@@ -23,7 +24,7 @@ import {
   rZb01,
 } from "./incidents";
 const initParamsValue = initParams[0].value;
-const rows = initParamsValue.totalBoxes.length / 2;
+const rows = initParamsValue.totalBoxes / 2;
 const columns = rows;
 
 export const clip = new HTMLClip({
@@ -52,25 +53,29 @@ export const clip = new HTMLClip({
 });
 
 clip.addIncident(songPlayback, 0);
-
-clip.addIncident(randomIn, 0);
-clip.addIncident(Flip, 9300);
-clip.addIncident(Flip2, 9800);
-clip.addIncident(FlipParent, 10300);
-clip.addIncident(
-  riple(rows, columns, rows / 2, columns / 2, 0, 125, { opacity: 0 }, ".box"),
-  11000
+const clipMotion = new Group();
+clipMotion.addIncident(rXYb0, 19300);
+clipMotion.addIncident(
+  riple(
+    rows,
+    columns,
+    rows / 2,
+    columns / 2,
+    0,
+    300,
+    {
+      transform: {
+        rotateZ: "45deg",
+      },
+    },
+    ".box"
+  ),
+  18425
 );
-clip.addIncident(
-  riple(rows, columns, rows / 2, columns / 2, 0, 125, { opacity: 1 }, ".box"),
-  11250
-);
-clip.addIncident(Zrandom, 11750);
-clip.addIncident(Yrandom, 12250);
-clip.addIncident(FlipParentBack, 12300);
-clip.addIncident(Y0, 12750);
-clip.addIncident(Z0, 13250);
-clip.addIncident(
+clipMotion.addIncident(FlipParentBack, 12300);
+clipMotion.addIncident(rZc1, 15200);
+clipMotion.addIncident(Flip2, 9800);
+clipMotion.addIncident(
   riple(
     rows,
     columns,
@@ -87,12 +92,28 @@ clip.addIncident(
   ),
   13750
 );
-clip.addIncident(rZc0, 14200);
-clip.addIncident(tZc0, 14700);
-clip.addIncident(rZc1, 15200);
-clip.addIncident(tZc1, 15700);
-clip.addIncident(rZb01, 16200);
-clip.addIncident(
+clipMotion.addIncident(rXc0, 17125);
+
+clipMotion.addIncident(Flip, 9300);
+clipMotion.addIncident(FlipParent, 10300);
+clipMotion.addIncident(
+  riple(rows, columns, rows / 2, columns / 2, 0, 125, { opacity: 0 }, ".box"),
+  11000
+);
+clipMotion.addIncident(
+  riple(rows, columns, rows / 2, columns / 2, 0, 125, { opacity: 1 }, ".box"),
+  11250
+);
+clipMotion.addIncident(Zrandom, 11750);
+clipMotion.addIncident(Yrandom, 12250);
+clipMotion.addIncident(Y0, 12750);
+clipMotion.addIncident(Z0, 13250);
+
+clipMotion.addIncident(rZc0, 14200);
+clipMotion.addIncident(tZc0, 14700);
+clipMotion.addIncident(tZc1, 15700);
+clipMotion.addIncident(rZb01, 16200);
+clipMotion.addIncident(
   riple(
     rows,
     columns,
@@ -109,9 +130,8 @@ clip.addIncident(
   ),
   16700
 );
-clip.addIncident(rXc0, 17125);
 
-clip.addIncident(
+clipMotion.addIncident(
   riple(
     rows,
     columns,
@@ -130,25 +150,7 @@ clip.addIncident(
   18000
 );
 
-clip.addIncident(
-  riple(
-    rows,
-    columns,
-    rows / 2,
-    columns / 2,
-    0,
-    300,
-    {
-      transform: {
-        rotateZ: "45deg",
-      },
-    },
-    ".box"
-  ),
-  18425
-);
-
-clip.addIncident(
+clipMotion.addIncident(
   riple(
     rows,
     columns,
@@ -165,9 +167,8 @@ clip.addIncident(
   ),
   18875
 );
-clip.addIncident(rXYb0, 19300);
 
-clip.addIncident(
+clipMotion.addIncident(
   riple(
     rows,
     columns,
@@ -183,4 +184,5 @@ clip.addIncident(
   19800
 );
 
-window.clip = clip;
+clipMotion.addIncident(randomIn, 0);
+clip.addIncident(clipMotion, 0);
