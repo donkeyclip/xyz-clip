@@ -3,6 +3,14 @@
   --box-height: calc({{initParams.height}} - 2px);
   box-sizing: border-box;
 }
+#newHost {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
 .root {
   margin: 0;
   background: blue;
@@ -34,7 +42,7 @@
   height: 50vmin;
   line-height: 0;
   transform-style: preserve-3d;
-  transform: rotateX(70deg);
+  /* transform: rotateX(70deg); */
 }
 
 .box {
