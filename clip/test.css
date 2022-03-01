@@ -1,0 +1,6 @@
+element.style {
+  opacity: 0;
+  transform: translateX(0px) translateY(0px) rotate(0deg) rotateX(180deg)
+    rotateY(180deg) rotateZ(45deg) scale(1) scaleX(1) scaleY(1) skewX(0deg)
+    skewY(0deg);
+}

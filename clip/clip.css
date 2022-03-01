@@ -42,7 +42,7 @@
   height: 50vmin;
   line-height: 0;
   transform-style: preserve-3d;
-  /* transform: rotateX(70deg); */
+  transform: rotateX(70deg);
 }
 
 .box {
@@ -50,7 +50,7 @@
   background: #fff;
   width: var(--box-width);
   height: var(--box-height);
-  opacity: 0;
+  opacity: 1;
   margin: 1px;
 }
 

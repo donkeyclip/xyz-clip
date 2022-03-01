@@ -30,11 +30,11 @@ export function riple(
   );
 }
 
-export const songPlayback = new AudioPlayback({
-  selector: "~#my-mp3",
-  startFrom: 0,
-  duration: 21000,
-});
+// export const songPlayback = new AudioPlayback({
+//   selector: "~#my-mp3",
+//   startFrom: 0,
+//   duration: 21000,
+// });
 
 export const randomIn = new CSSEffect(
   {
