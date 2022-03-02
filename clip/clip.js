@@ -24,7 +24,7 @@ import {
   rZb01,
 } from "./incidents";
 const initParamsValue = initParams[0].value;
-const rows = initParamsValue.totalBoxes / 2;
+const rows = Math.sqrt(initParamsValue.totalBoxes);
 const columns = rows;
 
 export const clip = new HTMLClip({
@@ -93,7 +93,6 @@ clipMotion.addIncident(
   13750
 );
 clipMotion.addIncident(rXc0, 17125);
-
 clipMotion.addIncident(Flip, 9300);
 clipMotion.addIncident(FlipParent, 10300);
 clipMotion.addIncident(
