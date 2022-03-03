@@ -23,11 +23,6 @@
     "motorcortex",
     "donkeyclip"
   ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
   "dependencies": {
     "@donkeyclip/motorcortex": "^7.9.3"
   },
