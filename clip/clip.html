@@ -2,7 +2,10 @@
   <div id="video-container"></div>
   <div id="perspective">
     <div class="container">
-      <div class="box" mc-for="key,item" mc-of="initParams.totalBoxes"></div>
+      <div class="row" mc-for="key,item" mc-of="initParams.sideLength">
+        <div class="box" mc-for="key,item" mc-of="initParams.sideLength"></div>
+      </div>
     </div>
   </div>
 </div>
+

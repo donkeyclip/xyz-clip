@@ -1,6 +1,10 @@
 * {
-  --box-width: calc({{initParams.width}} - 2px);
-  --box-height: calc({{initParams.height}} - 2px);
+  --row-width: 100%;
+  --row-height: calc(100%/{{initParams.sideLength}} - 2px);
+  --box-width: calc(100%/{{initParams.sideLength}} - 2px);
+  --box-height: 100%;
+  --background-color:{{initParams.backgroundColor}};
+  --color:{{initParams.color}};
   box-sizing: border-box;
 }
 #newHost {
@@ -13,10 +17,9 @@
 }
 .root {
   margin: 0;
-  background: blue;
   overflow: hidden;
   margin: 0;
-  background: #121212;
+  background: var(--background-color);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -42,26 +45,20 @@
   height: 50vmin;
   line-height: 0;
   transform-style: preserve-3d;
-  /* transform: rotateX(70deg); */
 }
 
+.row{
+  transform-style: preserve-3d;
+  display: inline-block;
+  width: var(--row-width);
+  height: var(--row-height);
+  margin-bottom: 2px;
+  }
 .box {
   display: inline-block;
-  background: #fff;
+  background: var(--color);
   width: var(--box-width);
   height: var(--box-height);
   opacity: 0;
-  margin: 1px;
-}
-
-.box::before,
-.box::after {
-  content: "";
-  background: #fff;
-  width: 0%;
-  height: 0%;
-  position: absolute;
-}
-.box::before {
-  background: #000;
+  margin-left: 2px;
 }
