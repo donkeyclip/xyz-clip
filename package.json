@@ -2,7 +2,7 @@
   "name": "motorcortex-clip-starter",
   "version": "1.0.0",
   "description": "Starter repo for creating Donkey Clips",
-  "author": "",
+  "author": "DonkeyClip",
   "repository": {
     "type": "git",
     "url": "https://github.com/donkeyclip/motorcortex-clip-starter"
@@ -16,15 +16,14 @@
     "lint:fix": "npm run lint -- --fix",
     "start": "npm run build & webpack serve --mode=development --config ./demo/webpack.config.js",
     "test": "HERE GOES YOUR TEST TASK",
-    "test:prod": "npm run lint",
-    "render": "node node_modules/dclip-video-renderer"
+    "test:prod": "npm run lint"
   },
   "keywords": [
     "motorcortex",
     "donkeyclip"
   ],
   "dependencies": {
-    "@donkeyclip/motorcortex": "^9.0.0"
+    "@donkeyclip/motorcortex": "^9.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.17.9",
@@ -43,7 +42,6 @@
     "concurrently": "6.5.1",
     "core-js": "3.21.1",
     "css-loader": "6.7.1",
-    "dclip-video-renderer": "1.3.0",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "16.0.3",
