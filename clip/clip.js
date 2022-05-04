@@ -24,7 +24,7 @@ import {
   rZb01,
 } from "./incidents";
 const initParamsValue = initParams[0].value;
-const rows = initParamsValue.sideLength;
+const rows = 12;
 const columns = rows;
 
 export const clip = new HTMLClip({
@@ -185,4 +185,3 @@ clipMotion.addIncident(
 
 clipMotion.addIncident(randomIn, 0);
 clip.addIncident(clipMotion, 0);
-

@@ -1,7 +1,7 @@
 * {
   --row-width: 100%;
-  --row-height: calc(100%/{{initParams.sideLength}} - 2px);
-  --box-width: calc(100%/{{initParams.sideLength}} - 2px);
+  --row-height: calc(100%/{{12}} - 2px);
+  --box-width: calc(100%/{{12}} - 2px);
   --box-height: 100%;
   --background-color:{{initParams.backgroundColor}};
   --color:{{initParams.color}};

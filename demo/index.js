@@ -80,3 +80,4 @@ player = new Player({
 if (searchOptions.initParams) {
   player.changeInitParams(initParams[searchOptions.initParams].value);
 }
+
