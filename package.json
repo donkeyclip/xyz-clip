@@ -24,7 +24,7 @@
     "donkeyclip"
   ],
   "dependencies": {
-    "@donkeyclip/motorcortex": "9.1.1"
+    "@donkeyclip/motorcortex": "9.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.18.2",
